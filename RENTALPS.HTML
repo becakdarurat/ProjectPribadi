@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rental ps</title>
+</head>
+<body>
+    <h1>Rental PS</h1>
+<p>nama:</p>
+<input type="text">
+<p>jam:</p>
+<input type="text" id="jam">
+<p>jenis:</p>
+<select name="" id="jenis">
+    <option value="ps3">ps3</option>
+    <option value="ps4">ps4</option>
+</select>
+<p>bayar:</p> 
+<label for="" id="bayar">...</label>
+<button onclick="cek()">hasil</button>
+<script>
+    function cek(){
+        let jam = parseInt(document.getElementById('jam').value);
+        let jenis=document.getElementById('jenis').value;
+        let bayar;
+        if(jam<=3){
+            if(jenis =='ps3'){
+                bayar =4000*jam;
+            } else {
+                if(jenis =='ps4'){
+                    bayar = 5000*jam
+                }
+            }
+        } else {
+            if(jenis == 'ps3'){
+                bayar = 4000*jam-2000;
+            } else {
+                if(jenis == 'ps4'){
+                    bayar=5000*jam-2000;
+                }
+            }
+        } document.getElementById('bayar').innerHTML=bayar;
+    }
+</script>
+</body>
+</html>
